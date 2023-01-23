@@ -78,7 +78,7 @@ function Result({ textData }) {
               : 'You got canceled. 😔'}
           </Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
-            You said {alex(textData).messages.length} bad things.
+            You offended {alex(textData).messages.length} people.
           </Card.Subtitle>
         </center>
         <Card.Body style={cardBodyStyle}>

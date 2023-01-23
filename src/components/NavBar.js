@@ -12,7 +12,7 @@ function NavBar() {
             fontWeight: 'bold',
           }}
         >
-          Will You Get Canceled? 🥴
+          willigetcanceled.com 🥴
         </Navbar.Brand>
       </Container>
     </Navbar>
