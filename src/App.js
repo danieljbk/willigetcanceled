@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+
+import TextControls from './components/TextControls'
+import Result from './components/Result'
+import NavBar from './components/NavBar'
 
 function App() {
+  const [textData, setTextData] = useState()
+  useEffect(() => {
+    if (textData === undefined) {
+      setTextData('')
+    }
+  }, [textData])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<TextControls setTextData={setTextData} />} />
+        <Route path='/result' element={<Result textData={textData} />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
